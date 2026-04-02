@@ -191,3 +191,35 @@
 - Próximo passo: Fase 6 (Testes) — T-039, T-040, T-044, T-046, T-047 sem bloqueio
 
 ---
+
+## Sessão 006 | 2026-04-02 | Agente: Claude Code
+
+### Iniciadas
+- T-039, T-040, T-044, T-046, T-047: Tarefas da Fase 6 sem bloqueio
+
+### Concluídas
+- T-039: PoliticaSenhaServiceTest (13 testes: complexidade, anti-reuso, expiração) | artefato: `src/test/java/.../domain/service/PoliticaSenhaServiceTest.java`
+- T-040: GestaoSessaoServiceTest (10 testes: limite sessões, expiração, desativação) | artefato: `src/test/java/.../domain/service/GestaoSessaoServiceTest.java`
+- T-044: AtivarContaUseCaseImplTest (9 testes: definirSenha + confirmarMfa com mocks) | artefato: `src/test/java/.../application/usecase/AtivarContaUseCaseImplTest.java`
+- T-046: AuditTrailImutavelTest (4 testes: INSERT OK, UPDATE rejeitado, DELETE rejeitado, DELETE usuario rejeitado) | artefato: `src/test/java/.../infrastructure/adapter/out/persistence/AuditTrailImutavelTest.java`
+- T-047: EmpreendimentoSecurityFilterTest (8 testes: visão global Admin/Superintendente/Diretor, filtro Engenheiro/AP/Analista, limpeza contexto, auth endpoints skip) | artefato: `src/test/java/.../infrastructure/adapter/in/web/security/EmpreendimentoSecurityFilterTest.java`
+
+### Bloqueadas (sem mudança)
+- T-041: Testes unitários CadastrarUsuarioUseCaseImpl — aguardando GAP-ACE-03
+- T-042: Testes máquina de estado Usuario — aguardando GAP-ACE-01
+- T-043: Testes integração cadastro e2e — aguardando GAP-ACE-03
+- T-045: Testes integração login callback — aguardando GAP-ACE-05
+
+### Cobertura de Testes
+- 44 testes totais (13 + 10 + 9 + 4 + 8)
+- Testes unitários puros: PoliticaSenhaService, GestaoSessaoService (sem framework)
+- Testes com mocks (Mockito): AtivarContaUseCaseImpl
+- Testes de integração com Testcontainers: AuditTrailImutavelTest (PostgreSQL real + triggers)
+- Testes de filtro: EmpreendimentoSecurityFilterTest (mock-based)
+
+### Pendências para próxima sessão
+- TODAS as 6 fases concluídas (tarefas sem bloqueio)
+- Restam 12 tarefas bloqueadas por 5 GAPs — requerem decisão humana
+- Para prosseguir, necessário resolver GAPs com PO (Guilherme) e Lucimar
+
+---

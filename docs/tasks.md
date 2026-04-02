@@ -81,15 +81,15 @@
 
 ## Fase 6 — Testes
 
-- `[TODO]` T-039 | Testes unitários: `PoliticaSenhaService` (complexidade, anti-reuso, expiração) | fonte: ET_ACE seção 8.1 | bloqueio: nenhum
-- `[TODO]` T-040 | Testes unitários: `GestaoSessaoService` (max 2 sessões, expiração inatividade) | fonte: ET_ACE seção 8.1 | bloqueio: nenhum
+- `[DONE]` T-039 | Testes unitários: `PoliticaSenhaService` (complexidade, anti-reuso, expiração) | fonte: ET_ACE seção 8.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/test/java/.../domain/service/PoliticaSenhaServiceTest.java`
+- `[DONE]` T-040 | Testes unitários: `GestaoSessaoService` (max 2 sessões, expiração inatividade) | fonte: ET_ACE seção 8.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/test/java/.../domain/service/GestaoSessaoServiceTest.java`
 - `[TODO]` T-041 | Testes unitários: `CadastrarUsuarioUseCaseImpl` (vinculação, CPF, e-mail duplicado) | fonte: ET_ACE seção 8.1 | bloqueio: GAP-ACE-03
 - `[TODO]` T-042 | Testes unitários: máquina de estado `Usuario` (transições válidas e inválidas) | fonte: ET_ACE seção 8.1 | bloqueio: GAP-ACE-01
 - `[TODO]` T-043 | Testes de integração: cadastro e2e (POST /usuarios → banco + IdP mock + e-mail + trilha) | fonte: ET_ACE seção 8.2 | bloqueio: GAP-ACE-03
-- `[TODO]` T-044 | Testes de integração: ativação e2e (POST /auth/ativar-conta → senha no IdP mock + MFA + status ATIVA) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum
+- `[DONE]` T-044 | Testes de integração: ativação e2e (POST /auth/ativar-conta → senha no IdP mock + MFA + status ATIVA) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/test/java/.../application/usecase/AtivarContaUseCaseImplTest.java`
 - `[TODO]` T-045 | Testes de integração: login callback (POST /auth/callback → tokens + sessão + trilha) | fonte: ET_ACE seção 8.2 | bloqueio: GAP-ACE-05
-- `[TODO]` T-046 | Testes de integração: trilha imutável (trigger rejeita UPDATE/DELETE em `ace_evento_acesso`) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum
-- `[TODO]` T-047 | Testes de integração: filtro de empreendimento (Engenheiro só vê dados vinculados) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum
+- `[DONE]` T-046 | Testes de integração: trilha imutável (trigger rejeita UPDATE/DELETE em `ace_evento_acesso`) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/test/java/.../infrastructure/adapter/out/persistence/AuditTrailImutavelTest.java`
+- `[DONE]` T-047 | Testes de integração: filtro de empreendimento (Engenheiro só vê dados vinculados) | fonte: ET_ACE seção 8.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/test/java/.../infrastructure/adapter/in/web/security/EmpreendimentoSecurityFilterTest.java`
 
 ---
 
