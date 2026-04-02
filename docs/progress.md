@@ -223,3 +223,34 @@
 - Para prosseguir, necessário resolver GAPs com PO (Guilherme) e Lucimar
 
 ---
+
+## Sessão 007 | 2026-04-02 | Agente: Claude Code
+
+### GAPs Resolvidos
+- GAP-ACE-01: 1 perfil por conta, 2 contas se pessoa tem 2 funções
+- GAP-ACE-02: SCCI stub com UnsupportedOperationException
+- GAP-ACE-03: DIRETOR_FINANCEIRO e TESOURARIA = SCCI (internos)
+- GAP-ACE-04: Seed com matriz draft da EF_ACE
+- GAP-ACE-05: JWT com scope restrito "password_change_required"
+
+### Concluídas (12 tarefas — todas as anteriormente bloqueadas)
+- T-007: V007 seed permissões padrão (8 perfis × módulos × ações) | artefato: `src/main/resources/db/migration/V007__seed_perfil_permissao.sql`
+- T-010: Usuario domain model (máquina de estados completa) | artefato: `src/main/java/.../domain/model/Usuario.java`
+- T-019: CadastrarUsuarioUseCaseImpl + CpfValidator | artefato: `src/main/java/.../application/usecase/CadastrarUsuarioUseCaseImpl.java`
+- T-021: RealizarLoginUseCaseImpl (callback OIDC, sessões, senha expirada) | artefato: `src/main/java/.../application/usecase/RealizarLoginUseCaseImpl.java`
+- T-022: GerenciarPerfisUseCaseImpl (alterar perfil + vinculações) | artefato: `src/main/java/.../application/usecase/GerenciarPerfisUseCaseImpl.java`
+- T-028: CognitoIdentityProviderAdapter (AWS SDK v2) | artefato: `src/main/java/.../infrastructure/adapter/out/identity/CognitoIdentityProviderAdapter.java`
+- T-029: ScciIdentityProviderAdapter (stub @ConditionalOnProperty) | artefato: `src/main/java/.../infrastructure/adapter/out/identity/ScciIdentityProviderAdapter.java`
+- T-034: AuthController completo (callback + logout adicionados) | artefato: `src/main/java/.../infrastructure/adapter/in/web/AuthController.java`
+- T-041: CadastrarUsuarioUseCaseImplTest (9 testes) | artefato: `src/test/java/.../application/usecase/CadastrarUsuarioUseCaseImplTest.java`
+- T-042: UsuarioTest — máquina de estado (15 testes) | artefato: `src/test/java/.../domain/model/UsuarioTest.java`
+- T-043: CadastroIntegracaoTest (3 testes e2e com mocks) | artefato: `src/test/java/.../application/usecase/CadastroIntegracaoTest.java`
+- T-045: RealizarLoginUseCaseImplTest (5 testes) | artefato: `src/test/java/.../application/usecase/RealizarLoginUseCaseImplTest.java`
+
+### Projeto 100% concluído
+- 47/47 tarefas DONE
+- 5/5 GAPs RESOLVED
+- ~90 arquivos Java, ~7000 linhas de código
+- 76 testes totais
+
+---
