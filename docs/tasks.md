@@ -47,12 +47,12 @@
 ## Fase 3 — Application Layer (Use Cases)
 
 - `[TODO]` T-019 | UC-ACE-01: `CadastrarUsuarioUseCaseImpl` | fonte: ET_ACE seções 10.3 e 3.2 | bloqueio: GAP-ACE-03
-- `[TODO]` T-020 | UC-ACE-02: `AtivarContaUseCaseImpl` | fonte: ET_ACE seção 3.3 | bloqueio: nenhum
+- `[DONE]` T-020 | UC-ACE-02: `AtivarContaUseCaseImpl` | fonte: ET_ACE seção 3.3 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/AtivarContaUseCaseImpl.java`
 - `[TODO]` T-021 | UC-ACE-03: `RealizarLoginUseCaseImpl` | fonte: ET_ACE seção 3.4 | bloqueio: GAP-ACE-05
 - `[TODO]` T-022 | UC-ACE-04: `GerenciarPerfisUseCaseImpl` | fonte: ET_ACE seção 3.5 | bloqueio: GAP-ACE-01
-- `[TODO]` T-023 | UC-ACE-05: `DesativarUsuarioUseCaseImpl` | fonte: ET_ACE seção 3.6 | bloqueio: nenhum
-- `[TODO]` T-024 | UC-ACE-06: `ResetarSenhaUseCaseImpl` | fonte: ET_ACE seção 3.7 | bloqueio: nenhum
-- `[TODO]` T-025 | UC-ACE-07: `EncerrarSessaoUseCaseImpl` | fonte: ET_ACE seção 3.8 | bloqueio: nenhum
+- `[DONE]` T-023 | UC-ACE-05: `DesativarUsuarioUseCaseImpl` | fonte: ET_ACE seção 3.6 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/DesativarUsuarioUseCaseImpl.java`
+- `[DONE]` T-024 | UC-ACE-06: `ResetarSenhaUseCaseImpl` | fonte: ET_ACE seção 3.7 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/ResetarSenhaUseCaseImpl.java`
+- `[DONE]` T-025 | UC-ACE-07: `EncerrarSessaoUseCaseImpl` | fonte: ET_ACE seção 3.8 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/EncerrarSessaoUseCaseImpl.java`
 
 ---
 

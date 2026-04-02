@@ -90,3 +90,38 @@
 - Tarefas da Fase 3 bloqueadas: T-019 (GAP-ACE-03), T-021 (GAP-ACE-05), T-022 (GAP-ACE-01)
 
 ---
+
+## Sessão 003 | 2026-04-02 | Agente: Claude Code
+
+### Iniciadas
+- T-020, T-023, T-024, T-025: Use Cases da Fase 3 sem bloqueio
+
+### Concluídas
+- T-020: UC-ACE-02 AtivarContaUseCaseImpl (definirSenha + confirmarMfa) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/AtivarContaUseCaseImpl.java`
+- T-023: UC-ACE-05 DesativarUsuarioUseCaseImpl (desativar + reativar) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/DesativarUsuarioUseCaseImpl.java`
+- T-024: UC-ACE-06 ResetarSenhaUseCaseImpl (self-service + admin forçado) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/ResetarSenhaUseCaseImpl.java`
+- T-025: UC-ACE-07 EncerrarSessaoUseCaseImpl (individual + todas) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/application/usecase/EncerrarSessaoUseCaseImpl.java`
+
+### Artefatos adicionais criados
+- Exceções de domínio (8 classes): `AceException`, `UsuarioNaoEncontradoException`, `StatusInvalidoException`, `TokenInvalidoException`, `SenhasDiferentesException`, `CodigoTotpInvalidoException`, `SessaoNaoEncontradaException`, `SenhaAtualIncorretaException` | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/exception/*.java`
+- Expandido `UsuarioRepository` com `DadosUsuario` record e métodos granulares de atualização (workaround para T-010 bloqueado)
+
+### Bloqueadas (sem mudança)
+- T-010: Domain model Usuario — aguardando GAP-ACE-01
+- T-019: CadastrarUsuarioUseCaseImpl — aguardando GAP-ACE-03
+- T-021: RealizarLoginUseCaseImpl — aguardando GAP-ACE-05
+- T-022: GerenciarPerfisUseCaseImpl — aguardando GAP-ACE-01
+
+### Decisões de Design
+- `UsuarioRepository.DadosUsuario` record como projeção temporária enquanto T-010 está bloqueado
+- Use cases recebem `HashEncoder` e `BcryptMatcher` como interfaces funcionais para manter camada de aplicação livre de Spring Security
+- `ResetarSenhaUseCaseImpl` recebe `historicoQuantidade` como parâmetro configurável (padrão 5)
+- Desativação aceita contas ATIVA ou BLOQUEADA (ambas podem ser desativadas)
+- `mascararEmail()` implementado inline no ResetarSenhaUseCaseImpl
+
+### Pendências para próxima sessão
+- Fase 3 parcialmente completa — 4/7 use cases implementados, 3 bloqueados por GAPs
+- Próximo passo possível: Fase 4 (Infrastructure Layer) com T-026 (JPA Entities), T-027 (JPA Repos), T-030 (SES Email), T-031 (AuditTrail), T-032 (Security Filter)
+- Fase 5 (API Layer) também tem tarefas sem bloqueio: T-033, T-035, T-036, T-037, T-038
+
+---
