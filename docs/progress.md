@@ -156,3 +156,38 @@
 - Próximo passo: Fase 5 (API Layer) — T-033, T-035, T-036, T-037, T-038 sem bloqueio
 
 ---
+
+## Sessão 005 | 2026-04-02 | Agente: Claude Code
+
+### Iniciadas
+- T-033, T-035, T-036, T-037, T-038: Tarefas da Fase 5 sem bloqueio
+
+### Concluídas
+- T-033: UsuarioController (POST, GET/{id}, PUT, desativar, reativar, reenviar-ativacao, forcar-reset-senha) | artefato: `src/main/java/.../infrastructure/adapter/in/web/UsuarioController.java`
+- T-035: SessaoController (GET sessões ativas, DELETE individual, DELETE todas) | artefato: `src/main/java/.../infrastructure/adapter/in/web/SessaoController.java`
+- T-036: SecurityConfig (Spring Security 6 FilterChain, OAuth2 Resource Server, JWT converter, stateless) | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/SecurityConfig.java`
+- T-037: AcePermissionEvaluator (lookup ace_perfil_permissao para @PreAuthorize) | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/AcePermissionEvaluator.java`
+- T-038: Endpoints adicionais — MeController (GET /usuarios/me), PerfilPermissaoController (GET/PUT /ace/perfis) | artefato: `src/main/java/.../infrastructure/adapter/in/web/{MeController,PerfilPermissaoController}.java`
+
+### Artefatos adicionais criados
+- AuthController (parcial — endpoints sem bloqueio: ativar-conta, confirmar-mfa, alterar-senha) | artefato: `src/main/java/.../infrastructure/adapter/in/web/AuthController.java`
+- AceExceptionHandler (RFC 7807 Problem Details) | artefato: `src/main/java/.../infrastructure/adapter/in/web/AceExceptionHandler.java`
+- PerfilPermissaoJpaEntity + PerfilPermissaoSpringDataRepository (necessário para T-037 e T-038)
+
+### Bloqueadas (sem mudança)
+- T-034: AuthController (callback + logout) — aguardando GAP-ACE-05
+
+### Decisões de Design
+- Controllers usam @PreAuthorize com @acePermissionEvaluator.hasPermission() para RBAC
+- SecurityConfig: CSRF desabilitado (API stateless), sessão HTTP STATELESS
+- JWT authorities extraídas do claim "perfil" com prefix "ROLE_"
+- AuthController implementado parcialmente (3 endpoints sem bloqueio; callback/logout pendentes)
+- reenviar-ativacao retorna placeholder (depende de T-019 CadastrarUsuarioUseCaseImpl)
+- MeController retorna perfil, empreendimentos vinculados e permissões agrupadas por módulo
+- Duração de sessão formatada em "Xh Ymin" para human-readable
+
+### Pendências para próxima sessão
+- Fase 5 praticamente completa — 5/6 tarefas, 1 bloqueada (T-034)
+- Próximo passo: Fase 6 (Testes) — T-039, T-040, T-044, T-046, T-047 sem bloqueio
+
+---

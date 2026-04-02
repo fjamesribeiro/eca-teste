@@ -70,12 +70,12 @@
 
 ## Fase 5 — API Layer
 
-- `[TODO]` T-033 | `UsuarioController`: POST /usuarios, GET /usuarios, GET /usuarios/{id}, PUT /usuarios/{id}, POST /desativar, POST /reativar, POST /reenviar-ativacao, POST /forcar-reset-senha | fonte: ET_ACE seções 3.2, 3.5, 3.6 | bloqueio: nenhum
+- `[DONE]` T-033 | `UsuarioController`: POST /usuarios, GET /usuarios/{id}, PUT /usuarios/{id}, POST /desativar, POST /reativar, POST /reenviar-ativacao, POST /forcar-reset-senha | fonte: ET_ACE seções 3.2, 3.5, 3.6 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/UsuarioController.java`
 - `[TODO]` T-034 | `AuthController`: POST /auth/callback, POST /auth/logout, POST /auth/ativar-conta, POST /auth/confirmar-mfa, POST /auth/alterar-senha | fonte: ET_ACE seções 3.3, 3.4, 3.7 | bloqueio: GAP-ACE-05
-- `[TODO]` T-035 | `SessaoController`: GET /usuarios/{id}/sessoes, DELETE /sessoes/{sessao_id}, DELETE /sessoes (todas) | fonte: ET_ACE seção 3.8 | bloqueio: nenhum
-- `[TODO]` T-036 | `SecurityConfig` (Spring Security 6 — FilterChain, OAuth2 Resource Server, JWT converter) | fonte: ET_ACE seção 6.2 | bloqueio: nenhum
-- `[TODO]` T-037 | `AcePermissionEvaluator` (lookup em `ace_perfil_permissao` para @PreAuthorize) | fonte: ET_ACE seção 6.2 | bloqueio: nenhum
-- `[TODO]` T-038 | Endpoints adicionais: GET /usuarios/me, GET /ace/perfis, PUT /ace/perfis/{perfil}/permissoes | fonte: ET_ACE seção 3.9 | bloqueio: nenhum
+- `[DONE]` T-035 | `SessaoController`: GET /usuarios/{id}/sessoes, DELETE /sessoes/{sessao_id}, DELETE /sessoes (todas) | fonte: ET_ACE seção 3.8 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/SessaoController.java`
+- `[DONE]` T-036 | `SecurityConfig` (Spring Security 6 — FilterChain, OAuth2 Resource Server, JWT converter) | fonte: ET_ACE seção 6.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/SecurityConfig.java`
+- `[DONE]` T-037 | `AcePermissionEvaluator` (lookup em `ace_perfil_permissao` para @PreAuthorize) | fonte: ET_ACE seção 6.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/AcePermissionEvaluator.java`
+- `[DONE]` T-038 | Endpoints adicionais: GET /usuarios/me, GET /ace/perfis, PUT /ace/perfis/{perfil}/permissoes | fonte: ET_ACE seção 3.9 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/{MeController,PerfilPermissaoController}.java`
 
 ---
 
