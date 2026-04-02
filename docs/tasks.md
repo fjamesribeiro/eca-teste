@@ -31,16 +31,16 @@
 
 ## Fase 2 — Domain Layer
 
-- `[TODO]` T-009 | Enums: `Perfil`, `StatusConta`, `ProviderType`, `TipoEventoAcesso`, `MotivoEncerramento`, `Modulo`, `Acao` | fonte: ET_ACE seção 2.3 | bloqueio: nenhum
+- `[DONE]` T-009 | Enums: `Perfil`, `StatusConta`, `ProviderType`, `TipoEventoAcesso`, `MotivoEncerramento`, `Modulo`, `Acao`, `ResultadoEvento` | fonte: ET_ACE seção 2.3 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/{Perfil,StatusConta,ProviderType,TipoEventoAcesso,MotivoEncerramento,Modulo,Acao,ResultadoEvento}.java`
 - `[TODO]` T-010 | Domain model: `Usuario` (com transições de estado) | fonte: ET_ACE seção 2.2.1 | bloqueio: GAP-ACE-01
-- `[TODO]` T-011 | Domain model: `Sessao` | fonte: ET_ACE seção 2.2.3 | bloqueio: nenhum
-- `[TODO]` T-012 | Domain model: `VinculacaoEmpreendimento` | fonte: ET_ACE seção 2.2.2 | bloqueio: nenhum
-- `[TODO]` T-013 | Domain model: `EventoAcesso` | fonte: ET_ACE seção 2.2.4 | bloqueio: nenhum
-- `[TODO]` T-014 | Domain model: `HistoricoSenha` | fonte: ET_ACE seção 2.2.5 | bloqueio: nenhum
-- `[TODO]` T-015 | Port in: interfaces dos 7 Use Cases (UC-ACE-01 a UC-ACE-07) | fonte: ET_ACE seção 1.1 | bloqueio: nenhum
-- `[TODO]` T-016 | Port out: `UsuarioRepository`, `SessaoRepository`, `EventoAcessoRepository`, `HistoricoSenhaRepository`, `IdentityProviderPort`, `EmailPort`, `AuditTrailPort` | fonte: ET_ACE seção 1.1 | bloqueio: nenhum
-- `[TODO]` T-017 | Domain service: `PoliticaSenhaService` (complexidade, anti-reuso, expiração) | fonte: ET_ACE seção 10.1 | bloqueio: nenhum
-- `[TODO]` T-018 | Domain service: `GestaoSessaoService` (max sessões, expiração por inatividade) | fonte: ET_ACE seção 10.2 | bloqueio: nenhum
+- `[DONE]` T-011 | Domain model: `Sessao` | fonte: ET_ACE seção 2.2.3 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/Sessao.java`
+- `[DONE]` T-012 | Domain model: `VinculacaoEmpreendimento` | fonte: ET_ACE seção 2.2.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/VinculacaoEmpreendimento.java`
+- `[DONE]` T-013 | Domain model: `EventoAcesso` | fonte: ET_ACE seção 2.2.4 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/EventoAcesso.java`
+- `[DONE]` T-014 | Domain model: `HistoricoSenha` | fonte: ET_ACE seção 2.2.5 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/HistoricoSenha.java`
+- `[DONE]` T-015 | Port in: interfaces dos 7 Use Cases (UC-ACE-01 a UC-ACE-07) | fonte: ET_ACE seção 1.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/port/in/{CadastrarUsuarioUseCase,AtivarContaUseCase,RealizarLoginUseCase,GerenciarPerfisUseCase,DesativarUsuarioUseCase,ResetarSenhaUseCase,EncerrarSessaoUseCase}.java`
+- `[DONE]` T-016 | Port out: `UsuarioRepository`, `SessaoRepository`, `EventoAcessoRepository`, `HistoricoSenhaRepository`, `VinculacaoEmpreendimentoRepository`, `IdentityProviderPort`, `EmailPort`, `AuditTrailPort` | fonte: ET_ACE seção 1.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/port/out/{UsuarioRepository,SessaoRepository,EventoAcessoRepository,HistoricoSenhaRepository,VinculacaoEmpreendimentoRepository,IdentityProviderPort,EmailPort,AuditTrailPort}.java`
+- `[DONE]` T-017 | Domain service: `PoliticaSenhaService` (complexidade, anti-reuso, expiração) | fonte: ET_ACE seção 10.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/service/PoliticaSenhaService.java`
+- `[DONE]` T-018 | Domain service: `GestaoSessaoService` (max sessões, expiração por inatividade) | fonte: ET_ACE seção 10.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/service/GestaoSessaoService.java`
 
 ---
 

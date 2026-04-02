@@ -54,3 +54,39 @@
 - Iniciar por T-009 (Enums) que não possui bloqueios
 
 ---
+
+## Sessão 002 | 2026-04-02 | Agente: Claude Code
+
+### Iniciadas
+- T-009 a T-018: Todas as tarefas da Fase 2 (Domain Layer) exceto T-010 (bloqueada)
+
+### Concluídas
+- T-009: Enums do domínio (8 enums: Perfil, StatusConta, ProviderType, TipoEventoAcesso, MotivoEncerramento, Modulo, Acao, ResultadoEvento) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/*.java`
+- T-011: Domain model Sessao | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/Sessao.java`
+- T-012: Domain model VinculacaoEmpreendimento | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/VinculacaoEmpreendimento.java`
+- T-013: Domain model EventoAcesso | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/EventoAcesso.java`
+- T-014: Domain model HistoricoSenha | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/model/HistoricoSenha.java`
+- T-015: Port in — 7 interfaces de Use Cases | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/port/in/*.java`
+- T-016: Port out — 8 interfaces de repositórios e serviços externos | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/port/out/*.java`
+- T-017: Domain service PoliticaSenhaService (complexidade, anti-reuso, expiração) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/service/PoliticaSenhaService.java`
+- T-018: Domain service GestaoSessaoService (max sessões, expiração inatividade) | artefato: `src/main/java/br/com/prognum/gestaoobras/modules/ace/domain/service/GestaoSessaoService.java`
+
+### Bloqueadas
+- T-010: Domain model Usuario — aguardando GAP-ACE-01 (multi-perfil)
+- T-007: Seed de permissões — aguardando GAP-ACE-04 (matriz não validada)
+
+### Decisões de Design
+- `Perfil` enum inclui métodos de comportamento: `possuiVisaoGlobal()`, `exigeVinculacao()`, `providerTypePadrao()`
+- Domain models usam padrão factory method (`criar()` + `reconstituir()`) sem construtores públicos
+- `PoliticaSenhaService` recebe `BcryptMatcher` funcional para manter domínio livre de BCrypt
+- `UsuarioRepository` definido com contratos primitivos pois T-010 (Usuario model) está bloqueado
+- Adicionado `ResultadoEvento` enum (SUCESSO/FALHA/BLOQUEIO) para coluna `resultado` de ace_evento_acesso
+- Adicionado `VinculacaoEmpreendimentoRepository` ao port out (não estava no escopo original de T-016 mas necessário)
+
+### Pendências para próxima sessão
+- T-010 continua bloqueada por GAP-ACE-01
+- Fase 2 praticamente completa — próximo passo é Fase 3 (Application Layer / Use Cases)
+- Tarefas da Fase 3 sem bloqueio: T-020 (AtivarConta), T-023 (DesativarUsuario), T-024 (ResetarSenha), T-025 (EncerrarSessao)
+- Tarefas da Fase 3 bloqueadas: T-019 (GAP-ACE-03), T-021 (GAP-ACE-05), T-022 (GAP-ACE-01)
+
+---
