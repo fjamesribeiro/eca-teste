@@ -18,14 +18,14 @@
 
 ## Fase 1 — Migrations (Flyway)
 
-- `[TODO]` T-001 | V001 `ace_usuario` | fonte: ET_ACE seção 9.2 | bloqueio: nenhum
-- `[TODO]` T-002 | V002 `ace_vinculacao_empreendimento` | fonte: ET_ACE seção 9.3 | bloqueio: nenhum
-- `[TODO]` T-003 | V003 `ace_sessao` | fonte: ET_ACE seção 9.4 | bloqueio: nenhum
-- `[TODO]` T-004 | V004 `ace_evento_acesso` | fonte: ET_ACE seção 9.5 | bloqueio: nenhum
-- `[TODO]` T-005 | V005 `ace_historico_senha` | fonte: ET_ACE seção 9.6 | bloqueio: nenhum
-- `[TODO]` T-006 | V006 `ace_perfil_permissao` | fonte: ET_ACE seção 9.7 | bloqueio: nenhum
-- `[TODO]` T-007 | V007 seed permissões padrão | fonte: ET_ACE seção 6.3 | bloqueio: GAP-ACE-04
-- `[TODO]` T-008 | V008 triggers de imutabilidade | fonte: ET_ACE seção 9.8 | bloqueio: nenhum
+- `[DONE]` T-001 | V001 `ace_usuario` | fonte: ET_ACE seção 9.2 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V001__create_ace_usuario.sql`
+- `[DONE]` T-002 | V002 `ace_vinculacao_empreendimento` | fonte: ET_ACE seção 9.3 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V002__create_ace_vinculacao_empreendimento.sql`
+- `[DONE]` T-003 | V003 `ace_sessao` | fonte: ET_ACE seção 9.4 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V003__create_ace_sessao.sql`
+- `[DONE]` T-004 | V004 `ace_evento_acesso` | fonte: ET_ACE seção 9.5 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V004__create_ace_evento_acesso.sql`
+- `[DONE]` T-005 | V005 `ace_historico_senha` | fonte: ET_ACE seção 9.6 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V005__create_ace_historico_senha.sql`
+- `[DONE]` T-006 | V006 `ace_perfil_permissao` | fonte: ET_ACE seção 9.7 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V006__create_ace_perfil_permissao.sql`
+- `[BLOCKED]` T-007 | V007 seed permissões padrão | fonte: ET_ACE seção 6.3 | bloqueio: GAP-ACE-04
+- `[DONE]` T-008 | V008 triggers de imutabilidade | fonte: ET_ACE seção 9.8 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/resources/db/migration/V008__create_ace_triggers_imutabilidade.sql`
 
 ---
 
