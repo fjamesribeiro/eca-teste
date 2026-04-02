@@ -58,13 +58,13 @@
 
 ## Fase 4 — Infrastructure Layer
 
-- `[TODO]` T-026 | JPA Entities: `UsuarioJpaEntity`, `SessaoJpaEntity`, `VinculacaoEmpreendimentoJpaEntity`, `EventoAcessoJpaEntity`, `HistoricoSenhaJpaEntity` | fonte: ET_ACE seção 1.1 | bloqueio: nenhum
-- `[TODO]` T-027 | JPA Repositories: `UsuarioJpaRepository`, `SessaoJpaRepository`, `EventoAcessoJpaRepository`, `HistoricoSenhaJpaRepository` | fonte: ET_ACE seção 1.1 | bloqueio: nenhum
+- `[DONE]` T-026 | JPA Entities: `UsuarioJpaEntity`, `SessaoJpaEntity`, `VinculacaoEmpreendimentoJpaEntity`, `EventoAcessoJpaEntity`, `HistoricoSenhaJpaEntity` | fonte: ET_ACE seção 1.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/out/persistence/entity/*.java`
+- `[DONE]` T-027 | JPA Repositories + Port Adapters: Spring Data repos + domain port adapter implementations | fonte: ET_ACE seção 1.1 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/out/persistence/repository/*.java` e `src/main/java/.../infrastructure/adapter/out/persistence/*Adapter.java`
 - `[TODO]` T-028 | `CognitoIdentityProviderAdapter` (AdminCreateUser, TOTP, OIDC callback, disable/enable) | fonte: ET_ACE seção 7.1 | bloqueio: GAP-ACE-03
 - `[TODO]` T-029 | `ScciIdentityProviderAdapter` (stub vazio até documentação disponível) | fonte: ET_ACE seção 7.2 | bloqueio: GAP-ACE-02
-- `[TODO]` T-030 | `SesEmailAdapter` (templates: ativacao-conta, reset-senha) | fonte: ET_ACE seção 7.3 | bloqueio: nenhum
-- `[TODO]` T-031 | `AuditTrailAdapter` (implementação @Async de `AuditTrailPort`) | fonte: ET_ACE seção 4 (RN-ACE-07) | bloqueio: nenhum
-- `[TODO]` T-032 | `EmpreendimentoSecurityFilter` + `SecurityContextHelper` | fonte: ET_ACE seção 6.4 | bloqueio: nenhum
+- `[DONE]` T-030 | `SesEmailAdapter` (templates: ativacao-conta, reset-senha) | fonte: ET_ACE seção 7.3 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/out/email/SesEmailAdapter.java`
+- `[DONE]` T-031 | `AuditTrailAdapter` (implementação @Async de `AuditTrailPort`) | fonte: ET_ACE seção 4 (RN-ACE-07) | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/out/audit/AuditTrailAdapter.java`
+- `[DONE]` T-032 | `EmpreendimentoSecurityFilter` + `SecurityContextHelper` | fonte: ET_ACE seção 6.4 | bloqueio: nenhum | concluído: 2026-04-02 | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/{EmpreendimentoSecurityFilter,SecurityContextHelper}.java`
 
 ---
 

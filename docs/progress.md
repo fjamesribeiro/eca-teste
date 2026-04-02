@@ -125,3 +125,34 @@
 - Fase 5 (API Layer) também tem tarefas sem bloqueio: T-033, T-035, T-036, T-037, T-038
 
 ---
+
+## Sessão 004 | 2026-04-02 | Agente: Claude Code
+
+### Iniciadas
+- T-026, T-027, T-030, T-031, T-032: Tarefas da Fase 4 sem bloqueio
+
+### Concluídas
+- T-026: JPA Entities (5 entidades mapeando tabelas da Fase 1) | artefato: `src/main/java/.../infrastructure/adapter/out/persistence/entity/*.java`
+- T-027: JPA Repositories (5 Spring Data repos) + Port Adapters (5 adapter implementations) | artefato: `src/main/java/.../infrastructure/adapter/out/persistence/repository/*.java` e `*Adapter.java`
+- T-030: SesEmailAdapter (templates HTML ativação + reset) | artefato: `src/main/java/.../infrastructure/adapter/out/email/SesEmailAdapter.java`
+- T-031: AuditTrailAdapter (@Async, com log de falha) | artefato: `src/main/java/.../infrastructure/adapter/out/audit/AuditTrailAdapter.java`
+- T-032: EmpreendimentoSecurityFilter + SecurityContextHelper (ThreadLocal) | artefato: `src/main/java/.../infrastructure/adapter/in/web/security/*.java`
+
+### Bloqueadas (sem mudança)
+- T-028: CognitoIdentityProviderAdapter — aguardando GAP-ACE-03
+- T-029: ScciIdentityProviderAdapter — aguardando GAP-ACE-02
+
+### Decisões de Design
+- JPA entities usam String para enums (perfil, status, etc.) — conversão enum feita nos adapters
+- Spring Data repos são interfaces internas; adapters implementam os ports de domínio
+- EventoAcessoRepositoryAdapter serializa detalhes JSONB via Jackson ObjectMapper
+- AuditTrailAdapter captura exceções para não bloquear fluxo principal (log.error)
+- EmpreendimentoSecurityFilter extrai perfil e usuario_id do JWT (claims: `usuario_id`, `perfil`, `custom:perfil`)
+- SecurityContextHelper usa ThreadLocal com clear() no finally do filter
+- SesEmailAdapter recebe remetente e baseUrl via @Value properties
+
+### Pendências para próxima sessão
+- Fase 4 parcialmente completa — 5/7 tarefas, 2 bloqueadas (Cognito/SCCI adapters)
+- Próximo passo: Fase 5 (API Layer) — T-033, T-035, T-036, T-037, T-038 sem bloqueio
+
+---
